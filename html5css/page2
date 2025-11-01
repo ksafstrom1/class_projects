@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tornado Safety | Alerts & Preparation</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Tornado Safety Tips</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="page2.html">Tornado Safety</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>What to Do When Tornado Alerts Are Issued</h2>
+        <hr />
+
+        <section>
+            <h3>Be Prepared</h3>
+            <p>
+                The best way to stay safe during tornado season is to prepare ahead of time.
+                Know where you’ll go if a tornado warning is issued.
+                Keep a flashlight, weather radio, and first aid kit in your designated shelter area.
+                Pay close attention to local weather alerts so you can act quickly when needed.
+            </p>
+
+            <p>
+                It’s also important to wear closed-toe shoes. Tornadoes often occur in warmer months,
+                but flip-flops or sandals can leave you vulnerable to sharp debris such as glass or metal fragments.
+                Consider keeping a sturdy helmet in your shelter as well—head injuries from flying debris are a leading
+                cause of tornado-related deaths.
+            </p>
+
+            <p>
+                Communication is also critical. Keep a radio, walkie-talkie, or personal alarm with you in case
+                you become trapped or need to signal for help. These tools can make it easier for rescuers to locate you
+                and ensure you can communicate your condition during or after the storm.
+            </p>
+        </section>
+
+        <section class="resources">
+            <h3>Learn More About Tornado Safety</h3>
+            <hr />
+            <p>
+                For official guidance and additional resources, visit:
+            </p>
+
+            <ul>
+                <li><a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/tornado.html"
+                        target="_blank">
+                        Red Cross Tornado Safety</a></li>
+                <li><a href="https://www.ready.gov/tornadoes" target="_blank">
+                        Ready.gov Tornado Information</a></li>
+            </ul>
+
+            <div class="images">
+                <figure>
+                    <img src="html5css/ready.govlogo.png" alt="Ready.gov" width="180" />
+                    <figcaption>Ready.gov – Preparedness resources for all hazards</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="html5css/americanredcrosslogo.png" alt="American Red Cross" width="180" />
+                    <figcaption>The American Red Cross – Disaster safety information</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tornado Safety Project | Created by Kevin Safstrom</p>
+    </footer>
+</body>
+
+</html>
