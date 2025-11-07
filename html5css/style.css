@@ -1,14 +1,15 @@
 /* =====================================
-   Tornado Safety Project Stylesheet
+   Tornado Safety Project Stylesheet V2
    Author: Kevin Safstrom
-   Date: 2025
+   Date: 11/6/25
    ===================================== */
 
 /* ---------- Global Reset ---------- */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 40%;
+  padding: 40%;
+
 }
 
 /* ---------- Base ---------- */
@@ -21,27 +22,43 @@ body {
   padding: 0;
 }
 
+#container {
+  background-color: gray;
+  width: 65%;
+  margin: 20px auto;
+  border: 5px solid crimson;
+  border-radius: 30px;
+  padding: 20px;
+
+}
+
 /* ---------- Header ---------- */
 header {
   background-color: #004080;
   color: #ffffff;
+  
   text-align: center;
   padding: 1.5rem 1rem;
 }
 
 header h1 {
+  text-shadow: 10px 10px 20px palegreen;
   margin-bottom: 0.5rem;
   font-size: 2rem;
 }
+/*---------- Navigation ----------- */
 
-nav a {
+nav li a {
+  list-style-type: none;
+  display: flex;
   color: #ffcc00;
   text-decoration: none;
   font-weight: bold;
   margin: 0 0.5rem;
 }
 
-nav a:hover {
+nav li a:hover {
+  color: lightgreen;
   text-decoration: underline;
 }
 
@@ -100,7 +117,7 @@ a:hover {
 
 figure {
   text-align: center;
-  max-width: 200px;
+  max-width: 100%;
 }
 
 figure img {
@@ -129,7 +146,7 @@ footer {
   text-align: center;
   background-color: #004080;
   color: #ffffff;
-  padding: 1rem;
+  padding: 40%;
   font-size: 0.9rem;
   margin-top: 2rem;
 }
