@@ -2,4 +2,5 @@
 <ul>
 <li><a href="intro_html/index.html" target="_blank">Intro to HTML</a></li>
 <li><a href="html5css/index.html" target="_blank">html5css</a></li>
+<li><a href="adv_css/index.html" target="_blank">adv_css</a></li>
 </ul>
