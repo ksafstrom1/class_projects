@@ -1,0 +1,606 @@
+/* =========================================================
+   COLOR SYSTEM WITH CSS VARIABLES
+   ========================================================= */
+:root {
+  --bg-body: #f5f7fb;
+  --text-color: var(--text-main);
+
+  /* Default / fallback colors */
+  --nav-bg: #0f172a;
+  --nav-text: #e5e7eb;
+
+  --accent: #ec4899;
+  --accent-2: #06b6d4;
+
+  --floor-mat: #0b1120;
+  --floor-border: #e5e7eb;
+
+  --hero-gradient-1: #fee2e2;
+  --hero-gradient-2: #e0f2fe;
+}
+
+/* =========================================================
+   GYM COLOR THEMES
+   ========================================================= */
+
+/* 1. Cheer Athletics (blue, black, white) */
+body.gym-cheer-athletics {
+  --text-color: var(--floor-mat) --nav-bg: #020617;
+  --accent: #2563eb;
+  --accent-2: #38bdf8;
+  --floor-mat: royalblue;
+  --hero-gradient-1: #dbeafe;
+  --hero-gradient-2: #eff6ff;
+}
+
+/* 2. Top Gun All Stars (black and gold) */
+body.gym-top-gun {
+  --text-color: var(--nav-text) --nav-bg: #020617;
+  --accent: #facc15;
+  --accent-2: #f97316;
+  --floor-mat: grey;
+  --hero-gradient-1: #fef3c7;
+  --hero-gradient-2: #111827;
+}
+
+/* 3. Cheer Extreme (teal + black) */
+body.gym-cheer-extreme {
+  --text-color: var(--nav-text) --nav-bg: #020617;
+  --accent: #0f766e;
+  --accent-2: #22c55e;
+  --floor-mat: #020617;
+  --hero-gradient-1: #ccfbf1;
+  --hero-gradient-2: #0f172a;
+}
+
+/* 4. World Cup All Stars (navy + gold) */
+body.gym-world-cup {
+  --text-color: var(--nav-text) --nav-bg: #020617;
+  --accent: #fbbf24;
+  --accent-2: #e5e7eb;
+  --floor-mat: tan;
+  --hero-gradient-1: #fef3c7;
+  --hero-gradient-2: #1f2937;
+}
+
+/* 5. Spirit of Texas (purple + silver) */
+body.gym-spirit-of-texas {
+  --text-color: var(--nav-text) --nav-bg: #4c1d95;
+  --accent: #6d28d9;
+  --accent-2: #a5b4fc;
+  --floor-mat: rgb(0, 0, 0);
+  --hero-gradient-1: #ede9fe;
+  --hero-gradient-2: #1e1b4b;
+}
+
+/* =========================================================
+   GLOBAL BASE STYLES
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--main-text);
+  background-color: var(--bg-body);
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Background Image Layer (Blurred) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/The-Cheerleading-Worlds-2025.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(12px);
+  /* adjust blur level */
+  transform: scale(1.1);
+  /* prevents blur from cutting edges */
+  z-index: -1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  
+  text-shadow: 0px 0px 12px rgba(108, 108, 229, 0.75), 0px 0px 18px rgba(142, 149, 8, 0.55);
+}
+
+
+h1 {
+  font-size: 3.5rem;
+  /* large title */
+}
+
+h2 {
+  font-size: 2rem;
+  /* section headers */
+}
+
+h3 {
+  font-size: 2rem;
+  /* sub-headers */
+}
+
+
+h1,
+h2,
+h3,
+p {
+  color: #2563eb;
+  text-shadow: #a5b4fc;
+}
+h1 {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    background: rgba(0, 0, 0, 0.40); /* adjustable */
+    border-radius: 10px;
+    backdrop-filter: blur(3px);     /* optional: gives premium look */
+}
+
+
+
+a {
+  color: var(--main-text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* =========================================================
+   HEADER + NAV
+   ========================================================= */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--nav-bg);
+  color: #ffffff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-mark {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.logo-text {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.main-nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  color: var(--nav-text);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background: #111827;
+  border-color: var(--accent);
+}
+
+.nav-link.current {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* =========================================================
+   COMPETITION FLOOR CONTAINER
+   ========================================================= */
+
+.floor-container {
+  background: var(--floor-mat);
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 10px solid var(--floor-border);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.35);
+  position: relative;
+
+  /* === 8 evenly spaced vertical lines === */
+  background-image: repeating-linear-gradient(to right,
+      rgba(255, 255, 255, 0.2) 0px,
+      rgba(255, 255, 255, 0.2) 3px,
+      transparent 3px,
+      transparent calc(100% / 9));
+}
+
+.floor-container::before {
+  content: "";
+  position: absolute;
+  inset: 1.25rem 40%;
+  border-left: 3px solid var(--accent);
+  border-right: 3px solid var(--accent-2);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.floor-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: radial-gradient(circle at top left,
+      var(--hero-gradient-1),
+      var(--hero-gradient-2));
+  border-radius: 1.25rem;
+  border: 1px solid rgba(248, 250, 252, 0.5);
+  padding: 2rem;
+}
+
+.hero-title {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.15rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--nav-bg);
+  color: #f9fafb;
+  margin-bottom: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--nav-bg);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--acent-2);
+  text-decoration: none;
+}
+
+/* =========================================================
+   PAGE HEADERS
+   ========================================================= */
+
+.page-header {
+  margin: 2rem 0 1.5rem;
+}
+
+.page-header h1 {
+  font-family: "Poppins", system-ui, sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+/* =========================================================
+   COLUMNS
+   ========================================================= */
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.column {
+  flex: 1 1 260px;
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 1.25rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 12px rgba(15, 23, 42, 0.06);
+}
+
+.column h2 {
+  font-family: "Poppins", system-ui, sans-serif;
+  margin-top: 0;
+}
+
+/* =========================================================
+   TIMELINE LISTS
+   ========================================================= */
+
+.timeline-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.timeline-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.45rem;
+  top: 0.4rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* =========================================================
+   IMAGE GRIDS
+   ========================================================= */
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.image-card {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.image-card img {
+  border-radius: 0.7rem;
+}
+
+.image-card figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* =========================================================
+   MEDIA SECTIONS
+   ========================================================= */
+
+.media-section {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 1.25rem;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.video-wrapper iframe {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.media-section {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.media-section h1 {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.media-intro {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 2.5rem;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* clickable card behaves like a button */
+.media-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, translate 0.18s ease;
+}
+
+.media-card:hover,
+.media-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.35);
+}
+
+/* image area */
+.media-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.media-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* text area */
+.media-content {
+  padding: 1.25rem 1.4rem 1.5rem;
+}
+
+.media-content h2 {
+  margin: 0 0 0.4rem;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.media-content p {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+/* the “button” label */
+.media-button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.image-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  /* space between the cards */
+  width: 100%;
+}
+
+.image-card {
+  text-align: center;
+  max-width: 600px;
+  /* keeps everything nicely centered */
+}
+
+.image-card img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.image-card figcaption {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: var(--main-text);
+  line-height: 1.4;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--floor-mat);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
