@@ -453,6 +453,9 @@ main {
 /* =========================================================
    MEDIA SECTIONS & VIDEO WRAPPER
    ========================================================= */
+iframe {
+  border: none;
+}
 
 .media-section {
   background: #ffffff;
