@@ -3,9 +3,8 @@
    ========================================================= */
 :root {
   --bg-body: #f5f7fb;
-  --text-color: var(--text-main);
+  --text-color: #0f172a;
 
-  /* Default / fallback colors */
   --nav-bg: #0f172a;
   --nav-text: #e5e7eb;
 
@@ -25,7 +24,8 @@
 
 /* 1. Cheer Athletics (blue, black, white) */
 body.gym-cheer-athletics {
-  --text-color: var(--floor-mat) --nav-bg: #020617;
+  --nav-bg: #020617;
+  --nav-text: #e5e7eb;
   --accent: #2563eb;
   --accent-2: #38bdf8;
   --floor-mat: royalblue;
@@ -35,17 +35,19 @@ body.gym-cheer-athletics {
 
 /* 2. Top Gun All Stars (black and gold) */
 body.gym-top-gun {
-  --text-color: var(--nav-text) --nav-bg: #020617;
+  --nav-bg: #020617;
+  --nav-text: #e5e7eb;
   --accent: #facc15;
   --accent-2: #f97316;
-  --floor-mat: grey;
+  --floor-mat: gray;
   --hero-gradient-1: #fef3c7;
   --hero-gradient-2: #111827;
 }
 
 /* 3. Cheer Extreme (teal + black) */
 body.gym-cheer-extreme {
-  --text-color: var(--nav-text) --nav-bg: #020617;
+  --nav-bg: #020617;
+  --nav-text: #e5e7eb;
   --accent: #0f766e;
   --accent-2: #22c55e;
   --floor-mat: #020617;
@@ -55,20 +57,22 @@ body.gym-cheer-extreme {
 
 /* 4. World Cup All Stars (navy + gold) */
 body.gym-world-cup {
-  --text-color: var(--nav-text) --nav-bg: #020617;
+  --nav-bg: #020617;
+  --nav-text: #e5e7eb;
   --accent: #fbbf24;
   --accent-2: #e5e7eb;
-  --floor-mat: tan;
+  --floor-mat: rgb(129, 3, 3);
   --hero-gradient-1: #fef3c7;
   --hero-gradient-2: #1f2937;
 }
 
 /* 5. Spirit of Texas (purple + silver) */
 body.gym-spirit-of-texas {
-  --text-color: var(--nav-text) --nav-bg: #4c1d95;
+  --nav-bg: #4c1d95;
+  --nav-text: #e5e7eb;
   --accent: #6d28d9;
   --accent-2: #a5b4fc;
-  --floor-mat: rgb(0, 0, 0);
+  --floor-mat: #000000;
   --hero-gradient-1: #ede9fe;
   --hero-gradient-2: #1e1b4b;
 }
@@ -87,7 +91,7 @@ body {
   margin: 0;
   font-family: "Roboto", Arial, sans-serif;
   line-height: 1.6;
-  color: var(--main-text);
+  color: var(--text-color);
   background-color: var(--bg-body);
   position: relative;
   min-height: 100vh;
@@ -106,9 +110,7 @@ body::before {
   background-position: center;
   background-repeat: no-repeat;
   filter: blur(12px);
-  /* adjust blur level */
   transform: scale(1.1);
-  /* prevents blur from cutting edges */
   z-index: -1;
 }
 
@@ -117,49 +119,52 @@ img {
   display: block;
 }
 
+/* Typography */
+
 h1,
 h2,
 h3 {
-  
-  text-shadow: 0px 0px 12px rgba(108, 108, 229, 0.75), 0px 0px 18px rgba(142, 149, 8, 0.55);
+  font-family: "Poppins", system-ui, sans-serif;
+  color: #2563eb;
+  margin-top: 0;
 }
 
-
+/* Default heading sizes (overridden in special contexts where needed) */
 h1 {
   font-size: 3.5rem;
-  /* large title */
 }
 
 h2 {
   font-size: 2rem;
-  /* section headers */
 }
 
 h3 {
-  font-size: 2rem;
-  /* sub-headers */
+  font-size: 1.5rem;
 }
 
-
-h1,
-h2,
-h3,
 p {
-  color: #2563eb;
-  text-shadow: #a5b4fc;
-}
-h1 {
-    display: inline-block;
-    padding: 0.35rem 0.75rem;
-    background: rgba(0, 0, 0, 0.40); /* adjustable */
-    border-radius: 10px;
-    backdrop-filter: blur(3px);     /* optional: gives premium look */
+  color: var(--text-color);
 }
 
+/* Special treatment for page headers on dark floor background */
+.page-header h1 {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+  color: #ffffff;
+  text-shadow:
+    0 0 12px rgba(0, 0, 0, 0.85),
+    0 0 18px rgba(0, 0, 0, 0.7);
+}
 
+.page-header p {
+  color: #e5e7eb;
+}
 
 a {
-  color: var(--main-text);
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -251,7 +256,7 @@ main {
   box-shadow: 0 16px 30px rgba(15, 23, 42, 0.35);
   position: relative;
 
-  /* === 8 evenly spaced vertical lines === */
+  /* 9 evenly spaced vertical lines */
   background-image: repeating-linear-gradient(to right,
       rgba(255, 255, 255, 0.2) 0px,
       rgba(255, 255, 255, 0.2) 3px,
@@ -259,6 +264,7 @@ main {
       transparent calc(100% / 9));
 }
 
+/* Center lane stripes */
 .floor-container::before {
   content: "";
   position: absolute;
@@ -275,7 +281,7 @@ main {
 }
 
 /* =========================================================
-   HERO SECTION
+   HERO SECTION (HOME PAGE)
    ========================================================= */
 
 .hero {
@@ -294,7 +300,6 @@ main {
 }
 
 .hero-title {
-  font-family: "Poppins", system-ui, sans-serif;
   font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0.75rem;
@@ -306,23 +311,33 @@ main {
 }
 
 .hero-badge {
-  display: inline-block;
-  padding: 0.15rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  display: block;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  /* rich black */
+  color: #ffffff;
+  text-align: center;
+  padding: 0.55rem 0.4rem;
+  font-weight: 700;
   text-transform: uppercase;
-  background: var(--nav-bg);
-  color: #f9fafb;
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  margin-bottom: 1.25rem;
+  border-radius: 4px;
+  /* change to 0 for perfectly square stripe */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.45);
 }
+
+
+
+
 
 .btn {
   display: inline-block;
   padding: 0.65rem 1.4rem;
   border-radius: 999px;
   border: none;
-  background: var(--nav-bg);
+  background: royalblue;
   color: #ffffff;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -332,7 +347,7 @@ main {
 
 .btn:hover,
 .btn:focus {
-  background: var(--acent-2);
+  background: var(--accent-2);
   text-decoration: none;
 }
 
@@ -344,17 +359,12 @@ main {
   margin: 2rem 0 1.5rem;
 }
 
-.page-header h1 {
-  font-family: "Poppins", system-ui, sans-serif;
-  margin-bottom: 0.5rem;
-}
-
 .highlight {
   color: var(--accent);
 }
 
 /* =========================================================
-   COLUMNS
+   COLUMNS / CONTENT CARDS
    ========================================================= */
 
 .columns {
@@ -371,11 +381,17 @@ main {
   padding: 1.25rem;
   border: 1px solid #e5e7eb;
   box-shadow: 0 6px 12px rgba(15, 23, 42, 0.06);
+  color: #111827;
 }
 
 .column h2 {
-  font-family: "Poppins", system-ui, sans-serif;
   margin-top: 0;
+}
+
+/* Remove glow and background from headings inside cards */
+.column h2,
+.column h3 {
+  color: #111827;
 }
 
 /* =========================================================
@@ -409,9 +425,10 @@ main {
    ========================================================= */
 
 .image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -420,21 +437,54 @@ main {
   border-radius: 0.9rem;
   padding: 0.75rem;
   border: 1px solid #e5e7eb;
+  text-align: center;
+  max-width: 600px;
+  flex: 1 1 260px;
+  color: #111827;
 }
 
 .image-card img {
   border-radius: 0.7rem;
+  width: 100%;
+  height: auto;
 }
 
 .image-card figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  font-size: 1rem;
   color: #4b5563;
+  line-height: 1.4;
+}
+
+/* Make headings inside image cards dark and clean */
+.image-card h2,
+.image-card h3 {
+  color: #111827;
+  text-shadow: none;
+  background: none;
 }
 
 /* =========================================================
-   MEDIA SECTIONS
+   MEDIA SECTIONS & VIDEO WRAPPER
    ========================================================= */
+/* Centered USASF logo on Early Years page */
+.center-logo {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.center-logo img {
+  display: block;
+  margin: 0 auto;
+  max-width: 120px;
+}
+
+/* Make embedded maps fit nicely inside image cards */
+.image-card iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 0.7rem;
+}
 
 .media-section {
   background: #ffffff;
@@ -442,6 +492,32 @@ main {
   padding: 1.25rem;
   border: 1px solid #e5e7eb;
   margin-bottom: 1.5rem;
+  color: #111827;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.media-section h1,
+.media-section h2,
+.media-section h3 {
+  color: #2563eb;
+  text-shadow: none;
+  background: none;
+  padding: 0;
+  backdrop-filter: none;
+}
+
+.media-section .media-intro {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 2.5rem;
+}
+
+.media-section>h1,
+.media-section>h2 {
+  text-align: center;
+  margin-bottom: 0.75rem;
 }
 
 .video-wrapper {
@@ -457,22 +533,7 @@ main {
   border-radius: 10px;
 }
 
-.media-section {
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 0 1.5rem 3rem;
-}
-
-.media-section h1 {
-  text-align: center;
-  margin-bottom: 0.75rem;
-}
-
-.media-intro {
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto 2.5rem;
-}
+/* Media grid of clickable cards */
 
 .media-grid {
   display: grid;
@@ -490,7 +551,7 @@ main {
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, translate 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .media-card:hover,
@@ -518,7 +579,8 @@ main {
   padding: 1.25rem 1.4rem 1.5rem;
 }
 
-.media-content h2 {
+.media-content h2,
+.media-content h3 {
   margin: 0 0 0.4rem;
   color: var(--accent);
   font-size: 1.2rem;
@@ -541,36 +603,6 @@ main {
   letter-spacing: 0.03em;
 }
 
-.image-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  /* space between the cards */
-  width: 100%;
-}
-
-.image-card {
-  text-align: center;
-  max-width: 600px;
-  /* keeps everything nicely centered */
-}
-
-.image-card img {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
-.image-card figcaption {
-  margin-top: 0.75rem;
-  font-size: 1rem;
-  color: var(--main-text);
-  line-height: 1.4;
-}
-
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -580,7 +612,8 @@ main {
   padding: 1.5rem;
   text-align: center;
   font-size: 0.9rem;
-  color: var(--floor-mat);
+  color: #e5e7eb;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /* =========================================================
