@@ -28,7 +28,7 @@ body.gym-cheer-athletics {
   --nav-text: #e5e7eb;
   --accent: #2563eb;
   --accent-2: #38bdf8;
-  --floor-mat: royalblue;
+  --floor-mat: #0b1120;
   --hero-gradient-1: #dbeafe;
   --hero-gradient-2: #eff6ff;
 }
@@ -129,7 +129,6 @@ h3 {
   margin-top: 0;
 }
 
-/* Default heading sizes (overridden in special contexts where needed) */
 h1 {
   font-size: 3.5rem;
 }
@@ -150,7 +149,7 @@ p {
 .page-header h1 {
   display: inline-block;
   padding: 0.35rem 0.75rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   backdrop-filter: blur(3px);
   color: #ffffff;
@@ -257,11 +256,13 @@ main {
   position: relative;
 
   /* 9 evenly spaced vertical lines */
-  background-image: repeating-linear-gradient(to right,
-      rgba(255, 255, 255, 0.2) 0px,
-      rgba(255, 255, 255, 0.2) 3px,
-      transparent 3px,
-      transparent calc(100% / 9));
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.18) 0px,
+    rgba(255, 255, 255, 0.18) 3px,
+    transparent 3px,
+    transparent calc(100% / 9)
+  );
 }
 
 /* Center lane stripes */
@@ -278,6 +279,7 @@ main {
 .floor-inner {
   position: relative;
   z-index: 1;
+  padding-top: 2.5rem; /* nice space above page-header */
 }
 
 /* =========================================================
@@ -291,17 +293,19 @@ main {
   align-items: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  background: radial-gradient(circle at top left,
-      var(--hero-gradient-1),
-      var(--hero-gradient-2));
+  background: radial-gradient(
+    circle at top left,
+    var(--hero-gradient-1),
+    var(--hero-gradient-2)
+  );
   border-radius: 1.25rem;
   border: 1px solid rgba(248, 250, 252, 0.5);
   padding: 2rem;
 }
 
 .hero-title {
-  font-size: 2rem;
-  margin-top: 0;
+  font-size: 2.4rem;
+  margin-top: 0.5rem;
   margin-bottom: 0.75rem;
 }
 
@@ -310,11 +314,11 @@ main {
   margin-bottom: 1.25rem;
 }
 
+/* full-width black stripe behind the text */
 .hero-badge {
   display: block;
   width: 100%;
   background: rgba(0, 0, 0, 0.92);
-  /* rich black */
   color: #ffffff;
   text-align: center;
   padding: 0.55rem 0.4rem;
@@ -324,13 +328,8 @@ main {
   font-size: 0.8rem;
   margin-bottom: 1.25rem;
   border-radius: 4px;
-  /* change to 0 for perfectly square stripe */
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.45);
 }
-
-
-
-
 
 .btn {
   display: inline-block;
@@ -356,7 +355,8 @@ main {
    ========================================================= */
 
 .page-header {
-  margin: 2rem 0 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
 }
 
 .highlight {
@@ -386,12 +386,6 @@ main {
 
 .column h2 {
   margin-top: 0;
-}
-
-/* Remove glow and background from headings inside cards */
-.column h2,
-.column h3 {
-  color: #111827;
 }
 
 /* =========================================================
@@ -456,35 +450,9 @@ main {
   line-height: 1.4;
 }
 
-/* Make headings inside image cards dark and clean */
-.image-card h2,
-.image-card h3 {
-  color: #111827;
-  text-shadow: none;
-  background: none;
-}
-
 /* =========================================================
    MEDIA SECTIONS & VIDEO WRAPPER
    ========================================================= */
-/* Centered USASF logo on Early Years page */
-.center-logo {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.center-logo img {
-  display: block;
-  margin: 0 auto;
-  max-width: 120px;
-}
-
-/* Make embedded maps fit nicely inside image cards */
-.image-card iframe {
-  width: 100%;
-  height: 450px;
-  border-radius: 0.7rem;
-}
 
 .media-section {
   background: #ffffff;
@@ -508,14 +476,14 @@ main {
   backdrop-filter: none;
 }
 
-.media-section .media-intro {
+.media-intro {
   text-align: center;
   max-width: 750px;
   margin: 0 auto 2.5rem;
 }
 
-.media-section>h1,
-.media-section>h2 {
+.media-section > h1,
+.media-section > h2 {
   text-align: center;
   margin-bottom: 0.75rem;
 }
